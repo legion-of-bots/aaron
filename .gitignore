@@ -2,4 +2,4 @@
 /vendor
 .DS_Store
 Gemfile.lock
-/daemons.rb.pid
+/daemon.rb.pid
