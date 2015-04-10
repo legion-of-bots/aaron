@@ -9,11 +9,12 @@ module Aaron
     end
 
     def run
-      n = next_sleep
-      t = tasks.each { |task| task.apply_time!(n) }.select &:ready_to_trigger?
-      sleep(n)
-      t.each &:trigger
-      run
+      while true do
+        n = next_sleep
+        t = tasks.each { |task| task.apply_time!(n) }.select &:ready_to_trigger?
+        sleep(n)
+        t.each &:trigger
+      end
     end
 
     def next_sleep

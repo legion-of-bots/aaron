@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/aaron'
+require 'daemons'
 
-Aaron::Aaron.run
+Daemons.run(File.expand_path("#{File.dirname(__FILE__)}/../daemon.rb"))
