@@ -13,9 +13,7 @@ module Aaron
     def run
       n = next_sleep
       t = tasks.each { |task| task.apply_time!(n) }.select &:ready_to_trigger?
-      puts n
       sleep(n)
-
       t.each &:trigger
       run
     end
