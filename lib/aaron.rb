@@ -24,9 +24,10 @@ module Aaron
     end
 
     def self.run
-      begin
-        Aaron.from_file(Aaron.locate_config_file).run
-      rescue TypeError
+      config_file = Aaron.locate_config_file
+      if config_file
+        Aaron.from_file(config_file).run
+      else
         raise Errors::ConfigFileNotFound.new %Q(
           Aaron was unable to locate his config file.
           He looked in

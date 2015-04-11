@@ -4,9 +4,9 @@ module Aaron
 
     attr_reader :range, :block
 
-    def initialize range, &block
+    def initialize range, proc = nil, &block
       @range = range
-      @block = block
+      @block = proc or block
     end
 
     def next_sleep
@@ -25,7 +25,7 @@ module Aaron
     end
 
     def trigger
-      block.call
+      if block.type then self.send(block.type) else block.call end
     end
 
     protected
@@ -36,6 +36,17 @@ module Aaron
         else
           range
         end
+      end
+
+      def exec
+        cmd = block.call.split(' ')
+        bin = File.expand_path(cmd[0])
+        if not File.exists?(bin)
+          bin = cmd[0]
+        end
+        rest = cmd.drop(1).join(' ')
+        bin  += ' ' + rest
+        `#{bin}`
       end
 
   end

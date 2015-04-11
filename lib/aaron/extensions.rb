@@ -33,3 +33,9 @@ class Fixnum
   end
 
 end
+
+class Proc
+
+  attr_accessor :type
+
+end
