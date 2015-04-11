@@ -54,7 +54,7 @@ time you want a task executed in.
 The `to` method takes a `Fixnum` and returns a range starting at self and ending
 at the parameter passed to it.
 
-   1.to 2 # => (1..2)
+    1.to 2 # => (1..2)
 
 ### Time helper methods
 
