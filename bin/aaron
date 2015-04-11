@@ -2,4 +2,11 @@
 
 require 'daemons'
 
-Daemons.run(File.expand_path("#{File.dirname(__FILE__)}/../daemon.rb"))
+daemon = File.expand_path("#{File.dirname(__FILE__)}/../aaron-daemon.rb")
+home   = File.expand_path('~')
+
+Daemons.run(daemon,
+  :app_name => 'aaron',
+  :dir      => home,
+  :dir_mode => :normal
+)
