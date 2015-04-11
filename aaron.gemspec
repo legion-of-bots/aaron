@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['William Yaworsky']
   spec.email         = ['wj.px01@gmail.com']
   spec.summary       = %q{Randomized cron.}
-  spec.homepage      = 'https://github.com/yaworsw/aaron'
+  spec.homepage      = 'https://github.com/legion-of-bots/aaron'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
