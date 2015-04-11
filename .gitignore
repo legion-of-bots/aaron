@@ -5,3 +5,4 @@ Gemfile.lock
 /daemon.rb.pid
 /bin/test
 /bin/out
+/pkg
