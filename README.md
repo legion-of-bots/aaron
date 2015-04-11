@@ -10,6 +10,9 @@ Randomize the execution of tasks
 
     $ gem install aaron
 
+Since Aaron is meant to be ran as a daemon you will should also add it to your
+`~/.bashrc` or `~/.bash_profile`.
+
 ## Usage
 
 To use Aaron simply create a `aaron.rb` file in your home directory (`~/aaron.rb`).
@@ -70,3 +73,9 @@ of time.  These methods are
 - week
 
 and their plural versions (i.e. `seconds`) also work too.
+
+# TODO
+
+- [ ] Add an `init` command to help with adding the `aaron` command to `.bashrc` and initializing `aaron.rb`
+- [ ] Allow the selection of alternate config files
+
